@@ -32,11 +32,136 @@ function H_or_V(y, x) {
 
     if (y != 9) {
         if (arr_enemy[y + 1][x] == 1 || arr_enemy[y + 1][x] == 2) {
-            console.log("Ship V")
-            return 0
+            console.log("Ship V,X", y, x)
+            return 2
         }
     }
 
+    if (x != 9 && y != 9 && x != 0 && y != 0) {
+        if ( (arr_enemy[y][x + 1] == 0 || arr_enemy[y][x + 1] == 4)  &&  
+             (arr_enemy[y][x - 1] == 0 || arr_enemy[y][x - 1] == 4)  &&
+             (arr_enemy[y + 1][x] == 0 || arr_enemy[y + 1][x] == 4 ) &&
+             (arr_enemy[y - 1][x] == 0 || arr_enemy[y - 1][x] == 4 )
+           ) {
+            //if (arr_enemy[y + 1][x] == 2 || arr_enemy[y + 1][x] == 1) {
+            console.log("Ship One1")
+            return 3
+        }
+    }
+
+    if (x == 9 && y != 0 && y != 9) {
+        if ( ( arr_enemy[y][x - 1] == 4 || arr_enemy[y][x - 1] == 0 ) 
+        && ( arr_enemy[y - 1 ][x] == 4 || arr_enemy[y - 1][x] == 0 )
+        && ( arr_enemy[y + 1 ][x] == 4 || arr_enemy[y + 1][x] == 0 )
+        ) {
+            //if (arr_enemy[y + 1][x] == 2 || arr_enemy[y + 1][x] == 1) {
+            console.log("Ship One2")
+            return 3
+        }
+    }
+
+
+    if (x == 0 && y != 0 && y != 9) {
+        if ( ( arr_enemy[y][x + 1] == 4 || arr_enemy[y][x + 1] == 0 ) 
+        && ( arr_enemy[y - 1 ][x] == 4 || arr_enemy[y - 1][x] == 0 )
+        && ( arr_enemy[y + 1 ][x] == 4 || arr_enemy[y + 1][x] == 0 )
+        ) {
+            //if (arr_enemy[y + 1][x] == 2 || arr_enemy[y + 1][x] == 1) {
+            console.log("Ship One2")
+            return 3
+        }
+    }
+
+    if (y == 9 && x != 0 && x != 9) {
+        if ( ( arr_enemy[y - 1][x] == 4 || arr_enemy[y - 1][x] == 0 ) 
+        && ( arr_enemy[y][x - 1] == 4 || arr_enemy[y][x - 1] == 0 )
+        && ( arr_enemy[y][x + 1] == 4 || arr_enemy[y][x + 1] == 0 )
+        ) {
+            //if (arr_enemy[y + 1][x] == 2 || arr_enemy[y + 1][x] == 1) {
+            console.log("Ship One2")
+            return 3
+        }
+    }
+
+    if (y == 0 && x != 0 && x != 9) {
+        if ( ( arr_enemy[y + 1][x] == 4 || arr_enemy[y + 1][x] == 0 ) 
+        && ( arr_enemy[y][x - 1] == 4 || arr_enemy[y][x - 1] == 0 )
+        && ( arr_enemy[y][x + 1] == 4 || arr_enemy[y][x + 1] == 0 )
+        ) {
+            //if (arr_enemy[y + 1][x] == 2 || arr_enemy[y + 1][x] == 1) {
+            console.log("Ship One2")
+            return 3
+        }
+    }
+
+    if (x == 0 && y == 0 ) {
+        if ( ( arr_enemy[y][x + 1] == 4 || arr_enemy[y][x + 1] == 0 ) 
+        && ( arr_enemy[y + 1 ][x] == 4 || arr_enemy[y + 1][x] == 0 )
+        ) {
+            //if (arr_enemy[y + 1][x] == 2 || arr_enemy[y + 1][x] == 1) {
+            console.log("Ship One2")
+            return 3
+        }
+    }   
+    
+    if (x == 9 && y == 0 ) {
+        if ( ( arr_enemy[y][x - 1] == 4 || arr_enemy[y][x - 1] == 0 ) 
+        && ( arr_enemy[y + 1 ][x] == 4 || arr_enemy[y + 1][x] == 0 )
+        ) {
+            //if (arr_enemy[y + 1][x] == 2 || arr_enemy[y + 1][x] == 1) {
+            console.log("Ship One2")
+            return 3
+        }
+    }   
+
+    if (x == 9 && y == 9 ) {
+        if ( ( arr_enemy[y][x - 1] == 4 || arr_enemy[y][x - 1] == 0 ) 
+        && ( arr_enemy[y - 1 ][x] == 4 || arr_enemy[y - 1][x] == 0 )
+        ) {
+            //if (arr_enemy[y + 1][x] == 2 || arr_enemy[y + 1][x] == 1) {
+            console.log("Ship One2")
+            return 3
+        }
+    }   
+
+
+    if (x == 0 && y == 9 ) {
+        if ( ( arr_enemy[y][x + 1] == 4 || arr_enemy[y][x + 1] == 0 ) 
+        && ( arr_enemy[y - 1 ][x] == 4 || arr_enemy[y - 1][x] == 0 )
+        ) {
+            //if (arr_enemy[y + 1][x] == 2 || arr_enemy[y + 1][x] == 1) {
+            console.log("Ship One2")
+            return 3
+        }
+    }   
+
+}
+
+
+function checkSingleShip(y, x) {
+    if (x == 0) {
+        x = x + 1
+    }
+    if (y == 0) {
+        y = y + 1
+    }
+    if (x == 9) {
+        x = x - 1
+    }
+    if (y == 9) {
+        y = y - 1
+    }
+    if ( (arr_enemy[y][x + 1] == 0 || arr_enemy[y][x + 1] == 4)  &&  
+             (arr_enemy[y][x - 1] == 0 || arr_enemy[y][x - 1] == 4)  &&
+             (arr_enemy[y + 1][x] == 0 || arr_enemy[y + 1][x] == 4 ) &&
+             (arr_enemy[y - 1][x] == 0 || arr_enemy[y - 1][x] == 4 )
+           ) {
+            //if (arr_enemy[y + 1][x] == 2 || arr_enemy[y + 1][x] == 1) {
+            console.log("Ship One1")
+            return 3
+    } else {
+        return 0
+    }
 }
 
 function find_dead() {
@@ -49,6 +174,13 @@ function find_dead() {
             console.log("Cell number: ", h)
             if (arr_enemy[v][h] != 0 && arr_enemy[v][h] != 3 && arr_enemy[v][h] != 4) {
                 // Horizontal
+                // For single deck ship
+                if (H_or_V(v, h) == 3) {
+                    if (arr_enemy[v][h] == 2) {
+                        arr_enemy[v][h] = 3
+                    }
+                }
+                // For other
                 if (H_or_V(v, h) == 1) {
 
                     while (h + 1 != 10 && tmp_stop != 1) {
@@ -65,7 +197,8 @@ function find_dead() {
                         h = h + 1
                     }
 
-                    if (h == 9 && arr_enemy[v][h + 1] != 0 && arr_enemy[v][h + 1] != 4) {
+                    //if (h == 9 && arr_enemy[v][h + 1] != 0 && arr_enemy[v][h + 1] != 4) {
+                    if (h == 9 && arr_enemy[v][h] != 0 && arr_enemy[v][h] != 4) {
                         tmp_c = tmp_c + 1
                         tmp_s = tmp_s + arr_enemy[v][h]
                         console.log("Print counter, sum: ", tmp_c, tmp_s)
@@ -83,40 +216,6 @@ function find_dead() {
                     tmp_stop = 0
                 }
 
-                // Vertical
-//                if (H_or_V(v, h) == 0) {
-//
-//                    while (v + 1 != 10 && tmp_stop != 1) {
-//                        if (arr_enemy[v + 1][h] != 0 && arr_enemy[v + 1][h] != 4) {
-//                            tmp_c = tmp_c + 1
-//                            tmp_s = tmp_s + arr_enemy[v][h]
-//                            console.log("Print counter, sum: ", tmp_c, tmp_s)
-//                        } else {
-//                            tmp_c = tmp_c + 1
-//                            tmp_s = tmp_s + arr_enemy[v][h]
-//                            tmp_stop = 1
-//                            console.log("Ship end: ")
-//                        }
-//                        v = v + 1
-//                    }
-//
-//                    if (v == 9 && arr_enemy[v + 1][h] != 0 && arr_enemy[v + 1][h] != 4) {
-//                        tmp_c = tmp_c + 1
-//                        tmp_s = tmp_s + arr_enemy[v][h]
-//                        console.log("Print counter, sum: ", tmp_c, tmp_s)
-//                        v = v + 1
-//                    }
-//
-//                    if (tmp_s % tmp_c == 0 && tmp_s / tmp_c != 1) {
-//                        for (tmp_c; tmp_c != 0; tmp_c--) {
-//                            arr_enemy[v - tmp_c][h] = 3
-//                        }
-//
-//                    }
-//                    tmp_c = 0
-//                    tmp_s = 0
-//                    tmp_stop = 0
-//                }
             }
 
             //else {
@@ -126,6 +225,63 @@ function find_dead() {
         }
         //arr_enemy[i][0]
     }
+
+
+    for (let h = 0; h < 10; h++) {
+        console.log("V Column number: ", h)
+        for (let v = 0; v < 10; v++) {
+            console.log("V Cell number: ", v)
+            if (arr_enemy[v][h] != 0 && arr_enemy[v][h] != 3 && arr_enemy[v][h] != 4) {
+
+                // Vertical
+                if (H_or_V(v, h) == 2) {
+
+                    while (v + 1 != 10 && tmp_stop != 1) {
+                        if (arr_enemy[v + 1][h] != 0 && arr_enemy[v + 1][h] != 4) {
+                            tmp_c = tmp_c + 1
+                            tmp_s = tmp_s + arr_enemy[v][h]
+                            console.log(" V Print counter, sum: ", tmp_c, tmp_s)
+                        } else {
+                            tmp_c = tmp_c + 1
+                            tmp_s = tmp_s + arr_enemy[v][h]
+                            tmp_stop = 1
+                            console.log("V Ship end: ")
+                        }
+                        v = v + 1
+                    }
+                    console.log("Befor ERROR V,h: ", v, h)
+
+                    //if (v == 9 && arr_enemy[v + 1][h] != 0 && arr_enemy[v + 1][h] != 4) {
+                    if (v == 9 && arr_enemy[v][h] != 0 && arr_enemy[v][h] != 4) {
+                        tmp_c = tmp_c + 1
+                        tmp_s = tmp_s + arr_enemy[v][h]
+                        console.log("V Print counter, sum: ", tmp_c, tmp_s)
+                        v = v + 1
+                    }
+
+                    if (tmp_s % tmp_c == 0 && tmp_s / tmp_c != 1) {
+                        for (tmp_c; tmp_c != 0; tmp_c--) {
+                            arr_enemy[v - tmp_c][h] = 3
+                        }
+
+                    }
+                    tmp_c = 0
+                    tmp_s = 0
+                    tmp_stop = 0
+                }
+            }
+
+            //else {
+            //    tmp_c = 0
+            //    tmp_s = 0
+            //    console.log(tmp_c, tmp_s)
+        }
+        //arr_enemy[i][0]
+    }
+
+
+
+
 }
 //}
 function bom(x, y) {
