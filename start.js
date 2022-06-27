@@ -642,6 +642,7 @@ document.querySelector("#btn").onclick = function () {
         } while (shipErrors != 0)
     }
 
+
     placeRandomShip4()
     placeRandomShip3()
     placeRandomShip3()
@@ -653,6 +654,7 @@ document.querySelector("#btn").onclick = function () {
     placeRandomShip1()
     placeRandomShip1()
 
+  
     //placeRandomShip3()
     //placeRandomShip3()
     //placeRandomShip2()
@@ -1171,23 +1173,21 @@ function paint_enemy() {
                 ctx.strokeStyle = "black"
                 ctx.strokeRect(startx_enemy + (20 * i), starty + (20 * j), 20, 20)
             } else if (arr_enemy[j][i] == 4) {
-                ctx.fillStyle = "blue"
+                ctx.fillStyle = "grey"
                 ctx.fillRect(startx_enemy + (20 * i), starty + (20 * j), 20, 20)
-                ctx.strokeStyle = "blue"
+                ctx.strokeStyle = "grey"
                 ctx.strokeRect(startx_enemy + (20 * i), starty + (20 * j), 20, 20)
             }
             else if (arr_enemy[j][i] == 3) {
-                ctx.fillStyle = "green"
+                ctx.fillStyle = "red"
                 ctx.fillRect(startx_enemy + (20 * i), starty + (20 * j), 20, 20)
                 ctx.strokeStyle = "blue"
                 ctx.strokeRect(startx_enemy + (20 * i), starty + (20 * j), 20, 20)
             }
             else if (arr_enemy[j][i] == 2) {
-                ctx.fillStyle = "blue"
+                ctx.fillStyle = "orange"
                 ctx.fillRect(startx_enemy + (20 * i), starty + (20 * j), 20, 20)
-                ctx.strokeStyle = "blue"
-                ctx.strokeRect(startx_enemy + (20 * i), starty + (20 * j), 20, 20)
-            }
+                }
             else if (arr_enemy[j][i] == 1) {
                 ctx.fillStyle = "blue"
                 ctx.fillRect(startx_enemy + (20 * i), starty + (20 * j), 20, 20)
