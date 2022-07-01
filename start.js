@@ -57,7 +57,7 @@ document.querySelector("#btn").onclick = function () {
                 }
                 if (!checkPlace(randy, randx)) {
                     shipErrors = 1
-                    console.log("ERR: cell is buisy")
+                    //console.log("ERR: cell is buisy")
                 }
                 // first block V check around
                 if (
@@ -79,7 +79,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlace(randy - 1, randx)
                 ) {
-                    console.log("cell1 Vert is OK")
+                    //console.log("cell1 Vert is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -94,7 +94,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlace(randy + 2, randx - 1)
                 ) {
-                    console.log("cell2 H is OK")
+                    //console.log("cell2 H is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -109,7 +109,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlace(randy + 3, randx - 1)
                 ) {
-                    console.log("cell3 H is OK")
+                    //console.log("cell3 H is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -124,7 +124,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlace(randy + 4, randx - 1)
                 ) {
-                    console.log("cell4 H is OK")
+                    //console.log("cell4 H is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -135,7 +135,7 @@ document.querySelector("#btn").onclick = function () {
                     arr_enemy[randy + 2][randx] = 1
                     arr_enemy[randy + 3][randx] = 1
                 } else {
-                    console.log("ERR: Save array")
+                    //console.log("ERR: Save array")
                 }
             }
 
@@ -146,7 +146,7 @@ document.querySelector("#btn").onclick = function () {
                 }
                 if (!checkPlace(randy, randx)) {
                     shipErrors = 1
-                    console.log("ERR: cell is buisy")
+                    //console.log("ERR: cell is buisy")
                 }
                 // first block H check around and x != 0, y != 0
                 if (
@@ -168,7 +168,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlace(randy - 1, randx)
                 ) {
-                    console.log("cell1 H is OK")
+                    //console.log("cell1 H is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -183,7 +183,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlace(randy + 1, randx + 2)
                 ) {
-                    console.log("cell2 Vert is OK")
+                    //console.log("cell2 Vert is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -198,7 +198,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlace(randy + 1, randx + 3)
                 ) {
-                    console.log("cell3 V is OK")
+                    //console.log("cell3 V is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -213,7 +213,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlace(randy + 1, randx + 4)
                 ) {
-                    console.log("cell4 V is OK")
+                    //console.log("cell4 V is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -224,7 +224,7 @@ document.querySelector("#btn").onclick = function () {
                     arr_enemy[randy][randx + 2] = 1
                     arr_enemy[randy][randx + 3] = 1
                 } else {
-                    console.log("ERR: Save array")
+                    //console.log("ERR: Save array")
                 }
             }
         } while (shipErrors != 0)
@@ -244,7 +244,7 @@ document.querySelector("#btn").onclick = function () {
                 }
                 if (!checkPlace(randy, randx)) {
                     shipErrors = 1
-                    console.log("ERR: cell is buisy")
+                    //console.log("ERR: cell is buisy")
                 }
                 // first block V check around
                 if (
@@ -266,7 +266,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlace(randy - 1, randx)
                 ) {
-                    console.log("cell1 Vert is OK")
+                    //console.log("cell1 Vert is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -281,7 +281,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlace(randy + 2, randx - 1)
                 ) {
-                    console.log("cell2 H is OK")
+                    //console.log("cell2 H is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -296,7 +296,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlace(randy + 3, randx - 1)
                 ) {
-                    console.log("cell3 H is OK")
+                    //console.log("cell3 H is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -306,7 +306,7 @@ document.querySelector("#btn").onclick = function () {
                     arr_enemy[randy + 1][randx] = 1
                     arr_enemy[randy + 2][randx] = 1
                 } else {
-                    console.log("ERR: Save array")
+                    //console.log("ERR: Save array")
                 }
             }
 
@@ -317,7 +317,7 @@ document.querySelector("#btn").onclick = function () {
                 }
                 if (!checkPlace(randy, randx)) {
                     shipErrors = 1
-                    console.log("ERR: cell is buisy")
+                    //console.log("ERR: cell is buisy")
                 }
                 // first block H check around and x != 0, y != 0
                 if (
@@ -369,7 +369,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlace(randy + 1, randx + 3)
                 ) {
-                    console.log("cell3 V is OK")
+                    //console.log("cell3 V is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -379,7 +379,7 @@ document.querySelector("#btn").onclick = function () {
                     arr_enemy[randy][randx + 1] = 1
                     arr_enemy[randy][randx + 2] = 1
                 } else {
-                    console.log("ERR: Save array")
+                    //console.log("ERR: Save array")
                 }
             }
         } while (shipErrors != 0)
@@ -399,7 +399,7 @@ document.querySelector("#btn").onclick = function () {
                 }
                 if (!checkPlace(randy, randx)) {
                     shipErrors = 1
-                    console.log("ERR: cell is buisy")
+                    //console.log("ERR: cell is buisy")
                 }
                 // first block V check around
                 if (
@@ -421,7 +421,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlace(randy - 1, randx)
                 ) {
-                    console.log("cell1 Vert is OK")
+                    //console.log("cell1 Vert is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -436,7 +436,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlace(randy + 2, randx - 1)
                 ) {
-                    console.log("cell2 H is OK")
+                    //console.log("cell2 H is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -446,7 +446,7 @@ document.querySelector("#btn").onclick = function () {
                     arr_enemy[randy][randx] = 1
                     arr_enemy[randy + 1][randx] = 1
                 } else {
-                    console.log("ERR: Save array")
+                    //console.log("ERR: Save array")
                 }
             }
 
@@ -457,7 +457,7 @@ document.querySelector("#btn").onclick = function () {
                 }
                 if (!checkPlace(randy, randx)) {
                     shipErrors = 1
-                    console.log("ERR: cell is buisy")
+                    //console.log("ERR: cell is buisy")
                 }
                 // first block H check around and x != 0, y != 0
                 if (
@@ -479,7 +479,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlace(randy - 1, randx)
                 ) {
-                    console.log("cell1 H is OK")
+                    //console.log("cell1 H is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -494,7 +494,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlace(randy + 1, randx + 2)
                 ) {
-                    console.log("cell2 Vert is OK")
+                    //console.log("cell2 Vert is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -504,7 +504,7 @@ document.querySelector("#btn").onclick = function () {
                     arr_enemy[randy][randx] = 1
                     arr_enemy[randy][randx + 1] = 1
                 } else {
-                    console.log("ERR: Save array")
+                    //console.log("ERR: Save array")
                 }
             }
         } while (shipErrors != 0)
@@ -517,7 +517,7 @@ document.querySelector("#btn").onclick = function () {
             let direction = Math.floor(Math.random() * 2)
             let randx = Math.floor(Math.random() * 10)
             let randy = Math.floor(Math.random() * 10)
-            console.log(direction, randx, randy)
+            //console.log(direction, randx, randy)
             if (direction == 0) {
                 if (randy > 9) {
                     shipErrors = 1
@@ -546,7 +546,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlace(randy - 1, randx)
                 ) {
-                    console.log("cell1 Vert is OK")
+                    //console.log("cell1 Vert is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -556,7 +556,7 @@ document.querySelector("#btn").onclick = function () {
                 if (shipErrors == 0) {
                     arr_enemy[randy][randx] = 1
                 } else {
-                    console.log("ERR: Save array")
+                   // console.log("ERR: Save array")
                 }
             }
 
@@ -567,7 +567,7 @@ document.querySelector("#btn").onclick = function () {
                 }
                 if (!checkPlace(randy, randx)) {
                     shipErrors = 1
-                    console.log("ERR: cell is buisy")
+                    //console.log("ERR: cell is buisy")
                 }
                 // first block H check around and x != 0, y != 0
                 if (
@@ -589,7 +589,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlace(randy - 1, randx)
                 ) {
-                    console.log("cell1 H is OK")
+                    //console.log("cell1 H is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -599,7 +599,7 @@ document.querySelector("#btn").onclick = function () {
                 if (shipErrors == 0) {
                     arr_enemy[randy][randx] = 1
                 } else {
-                    console.log("ERR: Save array")
+                    //console.log("ERR: Save array")
                 }
             }
         } while (shipErrors != 0)
@@ -643,14 +643,14 @@ document.querySelector("#btn").onclick = function () {
             let direction = Math.floor(Math.random() * 2)
             let randx = Math.floor(Math.random() * 10)
             let randy = Math.floor(Math.random() * 10)
-            console.log(direction, randx, randy)
+            //console.log(direction, randx, randy)
             if (direction == 0) {
                 if (randy > 6) {
                     shipErrors = 1
                 }
                 if (!checkPlaceMy(randy, randx)) {
                     shipErrors = 1
-                    console.log("ERR: cell is buisy")
+                    //console.log("ERR: cell is buisy")
                 }
                 // first block V check around
                 if (
@@ -672,7 +672,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlaceMy(randy - 1, randx)
                 ) {
-                    console.log("cell1 Vert is OK")
+                    //console.log("cell1 Vert is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -687,7 +687,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlaceMy(randy + 2, randx - 1)
                 ) {
-                    console.log("cell2 H is OK")
+                    //console.log("cell2 H is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -702,7 +702,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlaceMy(randy + 3, randx - 1)
                 ) {
-                    console.log("cell3 H is OK")
+                    //console.log("cell3 H is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -717,7 +717,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlaceMy(randy + 4, randx - 1)
                 ) {
-                    console.log("cell4 H is OK")
+                    //console.log("cell4 H is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -728,7 +728,7 @@ document.querySelector("#btn").onclick = function () {
                     arr[randy + 2][randx] = 1
                     arr[randy + 3][randx] = 1
                 } else {
-                    console.log("ERR: Save array")
+                    //console.log("ERR: Save array")
                 }
             }
 
@@ -739,7 +739,7 @@ document.querySelector("#btn").onclick = function () {
                 }
                 if (!checkPlaceMy(randy, randx)) {
                     shipErrors = 1
-                    console.log("ERR: cell is buisy")
+                    //console.log("ERR: cell is buisy")
                 }
                 // first block H check around and x != 0, y != 0
                 if (
@@ -761,7 +761,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlaceMy(randy - 1, randx)
                 ) {
-                    console.log("cell1 H is OK")
+                    //console.log("cell1 H is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -776,7 +776,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlaceMy(randy + 1, randx + 2)
                 ) {
-                    console.log("cell2 Vert is OK")
+                    //console.log("cell2 Vert is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -791,7 +791,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlaceMy(randy + 1, randx + 3)
                 ) {
-                    console.log("cell3 V is OK")
+                    //console.log("cell3 V is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -806,7 +806,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlaceMy(randy + 1, randx + 4)
                 ) {
-                    console.log("cell4 V is OK")
+                    //console.log("cell4 V is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -817,7 +817,7 @@ document.querySelector("#btn").onclick = function () {
                     arr[randy][randx + 2] = 1
                     arr[randy][randx + 3] = 1
                 } else {
-                    console.log("ERR: Save array")
+                    //console.log("ERR: Save array")
                 }
             }
         } while (shipErrors != 0)
@@ -830,14 +830,14 @@ document.querySelector("#btn").onclick = function () {
             let direction = Math.floor(Math.random() * 2)
             let randx = Math.floor(Math.random() * 10)
             let randy = Math.floor(Math.random() * 10)
-            console.log(direction, randx, randy)
+            //console.log(direction, randx, randy)
             if (direction == 0) {
                 if (randy > 7) {
                     shipErrors = 1
                 }
                 if (!checkPlaceMy(randy, randx)) {
                     shipErrors = 1
-                    console.log("ERR: cell is buisy")
+                    //console.log("ERR: cell is buisy")
                 }
                 // first block V check around
                 if (
@@ -859,7 +859,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlaceMy(randy - 1, randx)
                 ) {
-                    console.log("cell1 Vert is OK")
+                    //console.log("cell1 Vert is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -874,7 +874,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlaceMy(randy + 2, randx - 1)
                 ) {
-                    console.log("cell2 H is OK")
+                    //console.log("cell2 H is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -889,7 +889,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlaceMy(randy + 3, randx - 1)
                 ) {
-                    console.log("cell3 H is OK")
+                    //console.log("cell3 H is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -899,7 +899,7 @@ document.querySelector("#btn").onclick = function () {
                     arr[randy + 1][randx] = 1
                     arr[randy + 2][randx] = 1
                 } else {
-                    console.log("ERR: Save array")
+                    //console.log("ERR: Save array")
                 }
             }
 
@@ -910,7 +910,7 @@ document.querySelector("#btn").onclick = function () {
                 }
                 if (!checkPlaceMy(randy, randx)) {
                     shipErrors = 1
-                    console.log("ERR: cell is buisy")
+                    //console.log("ERR: cell is buisy")
                 }
                 // first block H check around and x != 0, y != 0
                 if (
@@ -932,7 +932,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlaceMy(randy - 1, randx)
                 ) {
-                    console.log("cell1 H is OK")
+                    //console.log("cell1 H is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -947,7 +947,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlaceMy(randy + 1, randx + 2)
                 ) {
-                    console.log("cell2 Vert is OK")
+                    //console.log("cell2 Vert is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -962,7 +962,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlaceMy(randy + 1, randx + 3)
                 ) {
-                    console.log("cell3 V is OK")
+                    //console.log("cell3 V is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -972,7 +972,7 @@ document.querySelector("#btn").onclick = function () {
                     arr[randy][randx + 1] = 1
                     arr[randy][randx + 2] = 1
                 } else {
-                    console.log("ERR: Save array")
+                    //console.log("ERR: Save array")
                 }
             }
         } while (shipErrors != 0)
@@ -985,14 +985,14 @@ document.querySelector("#btn").onclick = function () {
             let direction = Math.floor(Math.random() * 2)
             let randx = Math.floor(Math.random() * 10)
             let randy = Math.floor(Math.random() * 10)
-            console.log(direction, randx, randy)
+            //console.log(direction, randx, randy)
             if (direction == 0) {
                 if (randy > 8) {
                     shipErrors = 1
                 }
                 if (!checkPlaceMy(randy, randx)) {
                     shipErrors = 1
-                    console.log("ERR: cell is buisy")
+                    //console.log("ERR: cell is buisy")
                 }
                 // first block V check around
                 if (
@@ -1014,7 +1014,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlaceMy(randy - 1, randx)
                 ) {
-                    console.log("cell1 Vert is OK")
+                    //console.log("cell1 Vert is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -1029,7 +1029,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlaceMy(randy + 2, randx - 1)
                 ) {
-                    console.log("cell2 H is OK")
+                    //console.log("cell2 H is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -1039,7 +1039,7 @@ document.querySelector("#btn").onclick = function () {
                     arr[randy][randx] = 1
                     arr[randy + 1][randx] = 1
                 } else {
-                    console.log("ERR: Save array")
+                    //console.log("ERR: Save array")
                 }
             }
 
@@ -1050,7 +1050,7 @@ document.querySelector("#btn").onclick = function () {
                 }
                 if (!checkPlaceMy(randy, randx)) {
                     shipErrors = 1
-                    console.log("ERR: cell is buisy")
+                    //console.log("ERR: cell is buisy")
                 }
                 // first block H check around and x != 0, y != 0
                 if (
@@ -1072,7 +1072,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlaceMy(randy - 1, randx)
                 ) {
-                    console.log("cell1 H is OK")
+                    //console.log("cell1 H is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -1087,7 +1087,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlaceMy(randy + 1, randx + 2)
                 ) {
-                    console.log("cell2 Vert is OK")
+                    //console.log("cell2 Vert is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -1097,7 +1097,7 @@ document.querySelector("#btn").onclick = function () {
                     arr[randy][randx] = 1
                     arr[randy][randx + 1] = 1
                 } else {
-                    console.log("ERR: Save array")
+                    //console.log("ERR: Save array")
                 }
             }
         } while (shipErrors != 0)
@@ -1110,14 +1110,14 @@ document.querySelector("#btn").onclick = function () {
             let direction = Math.floor(Math.random() * 2)
             let randx = Math.floor(Math.random() * 10)
             let randy = Math.floor(Math.random() * 10)
-            console.log(direction, randx, randy)
+            //console.log(direction, randx, randy)
             if (direction == 0) {
                 if (randy > 9) {
                     shipErrors = 1
                 }
                 if (!checkPlaceMy(randy, randx)) {
                     shipErrors = 1
-                    console.log("ERR: cell is buisy")
+                    //console.log("ERR: cell is buisy")
                 }
                 // first block V check around
                 if (
@@ -1139,7 +1139,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlaceMy(randy - 1, randx)
                 ) {
-                    console.log("cell1 Vert is OK")
+                    //console.log("cell1 Vert is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -1149,7 +1149,7 @@ document.querySelector("#btn").onclick = function () {
                 if (shipErrors == 0) {
                     arr[randy][randx] = 1
                 } else {
-                    console.log("ERR: Save array")
+                    //console.log("ERR: Save array")
                 }
             }
 
@@ -1160,7 +1160,7 @@ document.querySelector("#btn").onclick = function () {
                 }
                 if (!checkPlaceMy(randy, randx)) {
                     shipErrors = 1
-                    console.log("ERR: cell is buisy")
+                    //console.log("ERR: cell is buisy")
                 }
                 // first block H check around and x != 0, y != 0
                 if (
@@ -1182,7 +1182,7 @@ document.querySelector("#btn").onclick = function () {
                     &&
                     checkPlaceMy(randy - 1, randx)
                 ) {
-                    console.log("cell1 H is OK")
+                    //console.log("cell1 H is OK")
                 } else {
                     shipErrors = 1
                 }
@@ -1192,7 +1192,7 @@ document.querySelector("#btn").onclick = function () {
                 if (shipErrors == 0) {
                     arr[randy][randx] = 1
                 } else {
-                    console.log("ERR: Save array")
+                    //console.log("ERR: Save array")
                 }
             }
         } while (shipErrors != 0)
@@ -1239,7 +1239,7 @@ function paint_enemy() {
                 ctx.fillRect(startx_enemy + (20 * i), starty + (20 * j), 20, 20)
                 }
             else if (arr_enemy[j][i] == 1) {
-                ctx.fillStyle = "blue"
+                ctx.fillStyle = "white"
                 ctx.fillRect(startx_enemy + (20 * i), starty + (20 * j), 20, 20)
                 ctx.strokeStyle = "black"
                 ctx.strokeRect(startx_enemy + (20 * i), starty + (20 * j), 20, 20)
