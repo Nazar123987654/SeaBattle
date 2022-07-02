@@ -567,11 +567,11 @@ function find_dead_our() {
 }
 
 function check_direc(v, h, direction) {
-    if (v != 0 && h != 0 && v != 9 && h != 9 && direction == 0) {
-        if (arr[v - 1][h] == 2 || arr[v - 1][h] == 4) {
-            direction = 1
-        }
-    }
+    //if (v != 0 && h != 0 && v != 9 && h != 9 && direction == 0) {
+    //    if (arr[v - 1][h] == 2 || arr[v - 1][h] == 4) {
+    //        direction = 1
+    //    }
+    //}
     if (v != 0 && h != 0 && v != 9 && h != 9 && direction == 1) {
         if (arr[v][h + 1] == 2 || arr[v][h + 1] == 4) {
             direction = 2
@@ -579,34 +579,33 @@ function check_direc(v, h, direction) {
     }
     if (v != 0 && h != 0 && v != 9 && h != 9 && direction == 2) {
         if (arr[v + 1][h] == 2 || arr[v + 1][h] == 4) {
-            direction = 3
-        }
-    }
-    if (v != 0 && h != 0 && v != 9 && h != 9 && direction == 3) {
-        if (arr[v][h - 1] == 2 || arr[v][h - 1] == 4) {
-            direction = 0
-        }
-    }
-    if (v != 0 && h != 0 && v != 9 && h != 9 && direction == 0) {
-        if (arr[v - 1][h] == 2 || arr[v - 1][h] == 4) {
             direction = 1
         }
     }
-    if (v != 0 && h != 0 && v != 9 && h != 9 && direction == 1) {
-        if (arr[v][h + 1] == 2 || arr[v][h + 1] == 4) {
-            direction = 2
-        }
-    }
-    if (v != 0 && h != 0 && v != 9 && h != 9 && direction == 2) {
-        if (arr[v + 1][h] == 2 || arr[v + 1][h] == 4) {
-            direction = 3
-        }
-    }
+    //if (v != 0 && h != 0 && v != 9 && h != 9 && direction == 3) {
+    //    if (arr[v][h - 1] == 2 || arr[v][h - 1] == 4) {
+    //        direction = 0
+    //    }
+    //}
+    //if (v != 0 && h != 0 && v != 9 && h != 9 && direction == 0) {
+    //    if (arr[v - 1][h] == 2 || arr[v - 1][h] == 4) {
+    //        direction = 1
+    //    }
+    //}
+    //if (v != 0 && h != 0 && v != 9 && h != 9 && direction == 1) {
+    //    if (arr[v][h + 1] == 2 || arr[v][h + 1] == 4) {
+    //        direction = 2
+    //    }
+    //}
+    //if (v != 0 && h != 0 && v != 9 && h != 9 && direction == 2) {
+    //    if (arr[v + 1][h] == 2 || arr[v + 1][h] == 4) {
+    //        direction = 3
+    //    }
+    //}
     if (v != 0 && h != 0 && v != 9 && h != 9) {
-        if ((arr[v - 1][h] == 2 || arr[v - 1][h] == 4) &&
+        if (
             (arr[v][h + 1] == 2 || arr[v][h + 1] == 4) &&
-            (arr[v + 1][h] == 2 || arr[v + 1][h] == 4) &&
-            (arr[v][h - 1] == 2 || arr[v][h - 1] == 4)
+            (arr[v + 1][h] == 2 || arr[v + 1][h] == 4)
         ) {
             direction = 4
         }
@@ -616,13 +615,13 @@ function check_direc(v, h, direction) {
 }
 
 function check_direc_two(v, h, direction) {
-    if (v != 0 && h != 0 && v != 9 && h != 9 && direction == 0) {
-        if (arr[v - 1][h] == 2) {
+    if (v != 0 && h != 0 && v != 9 && h != 9) {
+        if (arr[v - 1][h] == 0 || arr[v - 1][h] == 1) {
             direction = 0
         }
     }
-    if (v != 0 && h != 0 && v != 9 && h != 9 && direction == 3) {
-        if (arr[v][h - 1] == 2) {
+    if (v != 0 && h != 0 && v != 9 && h != 9 ) {
+        if (arr[v][h - 1] == 0 || arr[v][h - 1] == 1) {
             direction = 3
         }
     }
@@ -632,371 +631,440 @@ function check_direc_two(v, h, direction) {
 function bom_enemy() {
     let randx_enemy = Math.floor(Math.random() * 10)
     let randy_enemy = Math.floor(Math.random() * 10)
-    let direction = Math.floor(Math.random() * 4)
-    //let direction = 0
+    //let direction = Math.floor(Math.random() * 4)
+    let direction = 1
     var check_loop = 0
-    while (arr[randx_enemy][randy_enemy] == 4 && arr[randx_enemy][randy_enemy] == 3) {
-        randx_enemy = Math.floor(Math.random() * 10)
-        randy_enemy = Math.floor(Math.random() * 10)
-        console.log("Random: ", randy_enemy, randx_enemy)
-    }
-    console.log("Bom ARR: ", arr)
+
+    console.log("Bom ARR: ", arr, randx_enemy, randy_enemy)
     for (let v = 0; v < 10; v++) {
         for (let h = 0; h < 10; h++) {
-            //console.log("Bom v, h: ", v, h)
-            direction = check_direc(v, h, direction)
-            if (direction == 4) {
-                //if ( h < 9) {
-                //    h++
-                //    break
-                //} else {
-                //    h = 0
-                //    if (v < 9) {
-                //        v++
-                //    }
-                //    direction = check_direc(v, h, direction)
-                //}
-                direction = check_direc_two(v, h, direction)
-                if (direction == 0) {
-                    if (arr[v - 1][h] == 0) {
-                        arr[v - 1][h] = 4
-                        check_loop = 1
-                        paint()
-                        return
-                    }
-                    if (arr[v - 1][h] == 1) {
-                        arr[v - 1][h] = 2
-                        check_loop = 1
-                        find_dead_our()
-                        bom_enemy()
-                        return
-                    }
-                }
-                if (direction == 3) {
-                    if (arr[v][h - 1] == 0) {
-                        arr[v][h - 1] = 4
-                        check_loop = 1
-                        paint()
-                        return
-                    }
-                    if (arr[v][h - 1] == 1) {
-                        arr[v][h - 1] = 2
-                        check_loop = 1
-                        find_dead_our()
-                        bom_enemy()
-                        return
-                    }
-                }
+
+            if (arr[v][h] == 2 && v != 0 && h != 0 && v != 9) {
+                //console.log("Bom v, h: ", v, h)
+                direction = check_direc(v, h, direction)
                 if (direction == 4) {
-                    direction == 0
-                    console.log("Direction continue")
-                    continue
+                    //if ( h < 9) {
+                    //    h++
+                    //    break
+                    //} else {
+                    //    h = 0
+                    //    if (v < 9) {
+                    //        v++
+                    //    }
+                    //    direction = check_direc(v, h, direction)
+                    //}
+                    direction = check_direc_two(v, h, direction)
+                    console.log("D1", direction)
+                    if (direction == 0) {
+                        if (arr[v - 1][h] == 0) {
+                            arr[v - 1][h] = 4
+                            check_loop = 1
+                            paint()
+                            return
+                        }
+                        if (arr[v - 1][h] == 1) {
+                            arr[v - 1][h] = 2
+                            check_loop = 1
+                            find_dead_our()
+                            bom_enemy()
+                            return
+                        }
+                    }
+                    if (direction == 3) {
+                        if (arr[v][h - 1] == 0) {
+                            arr[v][h - 1] = 4
+                            check_loop = 1
+                            paint()
+                            return
+                        }
+                        if (arr[v][h - 1] == 1) {
+                            arr[v][h - 1] = 2
+                            check_loop = 1
+                            find_dead_our()
+                            bom_enemy()
+                            return
+                        }
+                    }
+                    if (direction == 4) {
+                        console.log("D2")
+                        if (arr[v][h + 2] == 0 || arr[v][h + 2] == 1) {
+                            if (arr[v][h + 2] == 0) {
+                                arr[v][h + 2] = 4
+                                check_loop = 1
+                                paint()
+                                return
+                            }
+                            if (arr[v][h + 2] == 1) {
+                                arr[v][h + 2] = 2
+                                check_loop = 1
+                                find_dead_our()
+                                bom_enemy()
+                                return
+                            }
+                        }
+                        if ((arr[v][h + 2] == 0 || arr[v][h + 2] == 1) && (arr[v][h + 3] == 0 || arr[v][h + 3] == 1)) {
+                            if (arr[v][h + 3] == 0) {
+                                arr[v][h + 3] = 4
+                                check_loop = 1
+                                paint()
+                                return
+                            }
+                            if (arr[v][h + 3] == 1) {
+                                arr[v][h + 3] = 2
+                                check_loop = 1
+                                find_dead_our()
+                                bom_enemy()
+                                return
+                            }
+                        }
+
+                        if (arr[v + 2][h] == 0 || arr[v + 2][h] == 1) {
+                            if (arr[v + 2][h] == 0) {
+                                arr[v + 2][h] = 4
+                                check_loop = 1
+                                paint()
+                                return
+                            }
+                            if (arr[v + 2][h] == 1) {
+                                arr[v + 2][h] = 2
+                                check_loop = 1
+                                find_dead_our()
+                                bom_enemy()
+                                return
+                            }
+                        }
+                        if ((arr[v + 2][h] == 0 || arr[v + 2][h] == 1) && (arr[v + 3][h] == 0 || arr[v + 3][h] == 1)) {
+                            if (arr[v + 3][h] == 0) {
+                                arr[v + 3][h] = 4
+                                check_loop = 1
+                                paint()
+                                return
+                            }
+                            if (arr[v + 3][h] == 1) {
+                                arr[v + 3][h] = 2
+                                check_loop = 1
+                                find_dead_our()
+                                bom_enemy()
+                                return
+                            }
+                        }
+                        // direction == 0
+                        // console.log("Direction continue")
+                        continue
+                    }
                 }
-            }
 
 
-            if (arr[v][h] == 2 && v != 0 && h != 0 && v != 9 && h != 9 && direction == 0 && arr[v - 1][h] != 4 && check_loop == 0) {
-                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
-                if (arr[v - 1][h] == 0) {
-                    arr[v - 1][h] = 4
-                    check_loop = 1
-                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
-                    paint()
-                    return
-                }
-                else if (arr[v - 1][h] == 1) {
-                    arr[v - 1][h] = 2
-                    check_loop = 1
-                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
-                    find_dead_our()
-                    bom_enemy()
-                    return
-                }
-            }
+
+                //if (arr[v][h] == 2 && v != 0 && h != 0 && v != 9 && h != 9 && direction == 0 && arr[v - 1][h] != 4 && check_loop == 0) {
+                //    console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
+                //    if (arr[v - 1][h] == 0) {
+                //        arr[v - 1][h] = 4
+                //        check_loop = 1
+                //        console.log("Bom S", v, h, randx_enemy, randy_enemy)
+                //        paint()
+                //        return
+                //    }
+                //    else if (arr[v - 1][h] == 1) {
+                //        arr[v - 1][h] = 2
+                //        check_loop = 1
+                //        console.log("Bom A", v, h, randx_enemy, randy_enemy)
+                //        find_dead_our()
+                //        bom_enemy()
+                //        return
+                //    }
+                //}
 
 
-            if (arr[v][h] == 2 && v != 0 && h != 0 && v != 9 && h != 9 && direction == 1 && arr[v][h + 1] != 4 && check_loop == 0) {
-                console.log("Bom h+1", v, h, randx_enemy, randy_enemy)
-                if (arr[v][h + 1] == 0) {
-                    arr[v][h + 1] = 4
-                    check_loop = 1
-                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
-                    paint()
-                    return
+                if (arr[v][h] == 2 && v != 0 && h != 0 && v != 9 && h != 9 && direction == 1 && arr[v][h + 1] != 4 && check_loop == 0) {
+                    console.log("Bom h+1", v, h, randx_enemy, randy_enemy)
+                    if (arr[v][h + 1] == 0) {
+                        arr[v][h + 1] = 4
+                        check_loop = 1
+                        console.log("Bom S", v, h, randx_enemy, randy_enemy)
+                        paint()
+                        return
+                    }
+                    else if (arr[v][h + 1] == 1) {
+                        arr[v][h + 1] = 2
+                        check_loop = 1
+                        console.log("Bom A", v, h, randx_enemy, randy_enemy)
+                        find_dead_our()
+                        bom_enemy()
+                        return
+                    }
                 }
-                else if (arr[v][h + 1] == 1) {
-                    arr[v][h + 1] = 2
-                    check_loop = 1
-                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
-                    find_dead_our()
-                    bom_enemy()
-                    return
+                if (arr[v][h] == 2 && v != 0 && h != 0 && v != 9 && h != 9 && direction == 2 && arr[v + 1][h] != 4 && check_loop == 0) {
+                    console.log("Bom v+1", v, h, randx_enemy, randy_enemy)
+                    if (arr[v + 1][h] == 0) {
+                        arr[v + 1][h] = 4
+                        check_loop = 1
+                        console.log("Bom S", v, h, randx_enemy, randy_enemy)
+                        paint()
+                        return
+                    }
+                    if (arr[v + 1][h] == 1) {
+                        arr[v + 1][h] = 2
+                        check_loop = 1
+                        console.log("Bom A", v, h, randx_enemy, randy_enemy)
+                        find_dead_our()
+                        bom_enemy()
+                        return
+                    }
                 }
+
             }
-            if (arr[v][h] == 2 && v != 0 && h != 0 && v != 9 && h != 9 && direction == 2 && arr[v + 1][h] != 4 && check_loop == 0) {
-                console.log("Bom v+1", v, h, randx_enemy, randy_enemy)
-                if (arr[v + 1][h] == 0) {
-                    arr[v + 1][h] = 4
-                    check_loop = 1
-                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
-                    paint()
-                    return
-                }
-                if (arr[v + 1][h] == 1) {
-                    arr[v + 1][h] = 2
-                    check_loop = 1
-                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
-                    find_dead_our()
-                    bom_enemy()
-                    return
-                }
-            }
-            if (arr[v][h] == 2 && v != 0 && h != 0 && v != 9 && h != 9 && direction == 3 && arr[v][h - 1] != 4 && check_loop == 0) {
-                console.log("Bom h-1", v, h, randx_enemy, randy_enemy)
-                if (arr[v][h - 1] == 0) {
-                    arr[v][h - 1] = 4
-                    check_loop = 1
-                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
-                    paint()
-                    return
-                }
-                else if (arr[v][h - 1] == 1) {
-                    arr[v][h - 1] = 2
-                    check_loop = 1
-                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
-                    find_dead_our()
-                    bom_enemy()
-                    return
-                }
-            }
+            //if (arr[v][h] == 2 && v != 0 && h != 0 && v != 9 && h != 9 && direction == 3 && arr[v][h - 1] != 4 && check_loop == 0) {
+            //    console.log("Bom h-1", v, h, randx_enemy, randy_enemy)
+            //    if (arr[v][h - 1] == 0) {
+            //        arr[v][h - 1] = 4
+            //        check_loop = 1
+            //        console.log("Bom S", v, h, randx_enemy, randy_enemy)
+            //        paint()
+            //        return
+            //    }
+            //    else if (arr[v][h - 1] == 1) {
+            //        arr[v][h - 1] = 2
+            //        check_loop = 1
+            //        console.log("Bom A", v, h, randx_enemy, randy_enemy)
+            //        find_dead_our()
+            //        bom_enemy()
+            //        return
+            //    }
+            //}
+
             //else if (arr[v][h] == 2 && v == 9)
 
             //if (arr[randx_enemy][randy_enemy] == 0 && check_loop == 0) {
             //    arr[randx_enemy][randy_enemy] = 4
             //}
 
-            let direction2 = Math.floor(Math.random() * 3)
-            //v0
-            if (arr[v][h] == 2 && v == 0 && direction2 == 0 && arr[v + 1][h] != 4 && check_loop == 0) {
-                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
-                if (arr[v + 1][h] == 0) {
-                    arr[v + 1][h] = 4
-                    check_loop = 1
-                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
-                    paint()
-                    return
-                }
-                else if (arr[v + 1][h] == 1) {
-                    arr[v + 1][h] = 2
-                    check_loop = 1
-                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
-                    find_dead_our()
-                    bom_enemy()
-                    return
-                }
-            }
-            if (arr[v][h] == 2 && v == 0 && direction2 == 1 && arr[v][h - 1] != 4 && check_loop == 0) {
-                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
-                if (arr[v][h - 1] == 0) {
-                    arr[v][h - 1] = 4
-                    check_loop = 1
-                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
-                    paint()
-                    return
-                }
-                else if (arr[v][h - 1] == 1) {
-                    arr[v][h - 1] = 2
-                    check_loop = 1
-                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
-                    find_dead_our()
-                    bom_enemy()
-                    return
-                }
-            }
-            if (arr[v][h] == 2 && v == 0 && direction2 == 2 && arr[v][h + 1] != 4 && check_loop == 0) {
-                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
-                if (arr[v][h + 1] == 0) {
-                    arr[v][h + 1] = 4
-                    check_loop = 1
-                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
-                    paint()
-                    return
-                }
-                else if (arr[v][h + 1] == 1) {
-                    arr[v][h + 1] = 2
-                    check_loop = 1
-                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
-                    find_dead_our()
-                    bom_enemy()
-                    return
-                }
-            }
-            //h9
-            if (arr[v][h] == 2 && h == 9 && direction2 == 0 && arr[v - 1][h] != 4 && check_loop == 0) {
-                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
-                if (arr[v - 1][h] == 0) {
-                    arr[v - 1][h] = 4
-                    check_loop = 1
-                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
-                    paint()
-                    return
-                }
-                else if (arr[v - 1][h] == 1) {
-                    arr[v - 1][h] = 2
-                    check_loop = 1
-                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
-                    find_dead_our()
-                    bom_enemy()
-                    return
-                }
-            }
-            if (arr[v][h] == 2 && h == 9 && direction2 == 1 && arr[v][h + 1] != 4 && check_loop == 0) {
-                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
-                if (arr[v][h + 1] == 0) {
-                    arr[v][h + 1] = 4
-                    check_loop = 1
-                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
-                    paint()
-                    return
-                }
-                else if (arr[v][h + 1] == 1) {
-                    arr[v][h + 1] = 2
-                    check_loop = 1
-                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
-                    find_dead_our()
-                    bom_enemy()
-                    return
-                }
-            }
-            if (arr[v][h] == 2 && h == 9 && direction2 == 2 && arr[v][h - 1] != 4 && check_loop == 0) {
-                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
-                if (arr[v][h - 1] == 0) {
-                    arr[v][h - 1] = 4
-                    check_loop = 1
-                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
-                    paint()
-                    return
-                }
-                else if (arr[v][h - 1] == 1) {
-                    arr[v][h - 1] = 2
-                    check_loop = 1
-                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
-                    find_dead_our()
-                    bom_enemy()
-                    return
-                }
-            }
-            //v9
-            if (arr[v][h] == 2 && v == 9 && direction2 == 0 && arr[v - 1][h] != 4 && check_loop == 0) {
-                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
-                if (arr[v - 1][h] == 0) {
-                    arr[v - 1][h] = 4
-                    check_loop = 1
-                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
-                    paint()
-                    return
-                }
-                else if (arr[v - 1][h] == 1) {
-                    arr[v - 1][h] = 2
-                    check_loop = 1
-                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
-                    find_dead_our()
-                    bom_enemy()
-                    return
-                }
-            }
-            if (arr[v][h] == 2 && v == 9 && direction2 == 1 && arr[v][h - 1] != 4 && check_loop == 0) {
-                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
-                if (arr[v][h - 1] == 0) {
-                    arr[v][h - 1] = 4
-                    check_loop = 1
-                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
-                    paint()
-                    return
-                }
-                else if (arr[v][h - 1] == 1) {
-                    arr[v][h - 1] = 2
-                    check_loop = 1
-                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
-                    find_dead_our()
-                    bom_enemy()
-                    return
-                }
-            }
-            if (arr[v][h] == 2 && v == 9 && direction2 == 2 && arr[v][h + 1] != 4 && check_loop == 0) {
-                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
-                if (arr[v][h + 1] == 0) {
-                    arr[v][h + 1] = 4
-                    check_loop = 1
-                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
-                    paint()
-                    return
-                }
-                else if (arr[v][h + 1] == 1) {
-                    arr[v][h + 1] = 2
-                    check_loop = 1
-                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
-                    find_dead_our()
-                    bom_enemy()
-                    return
-                }
-            }
-            //h0
-            if (arr[v][h] == 2 && h == 0 && direction2 == 0 && arr[v][h + 1] != 4 && check_loop == 0) {
-                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
-                if (arr[v][h + 1] == 0) {
-                    arr[v][h + 1] = 4
-                    check_loop = 1
-                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
-                    paint()
-                    return
-                }
-                else if (arr[v][h + 1] == 1) {
-                    arr[v][h + 1] = 2
-                    check_loop = 1
-                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
-                    find_dead_our()
-                    bom_enemy()
-                    return
-                }
-            }
-            if (arr[v][h] == 2 && h == 0 && direction2 == 1 && arr[v + 1][h] != 4 && check_loop == 0) {
-                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
-                if (arr[v + 1][h] == 0) {
-                    arr[v + 1][h] = 4
-                    check_loop = 1
-                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
-                    paint()
-                    return
-                }
-                else if (arr[v + 1][h] == 1) {
-                    arr[v + 1][h] = 2
-                    check_loop = 1
-                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
-                    find_dead_our()
-                    bom_enemy()
-                    return
-                }
-            }
-            if (arr[v][h] == 2 && v == 0 && direction2 == 2 && arr[v - 1][h] != 4 && check_loop == 0) {
-                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
-                if (arr[v - 1][h] == 0) {
-                    arr[v - 1][h] = 4
-                    check_loop = 1
-                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
-                    paint()
-                    return
-                }
-                else if (arr[v - 1][h] == 1) {
-                    arr[v - 1][h] = 2
-                    check_loop = 1
-                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
-                    find_dead_our()
-                    bom_enemy()
-                    return
-                }
-            }
+            //            let direction2 = Math.floor(Math.random() * 3)
+            //            //v0
+            //            if (arr[v][h] == 2 && v == 0 && direction2 == 0 && arr[v + 1][h] != 4 && check_loop == 0) {
+            //                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
+            //                if (arr[v + 1][h] == 0) {
+            //                    arr[v + 1][h] = 4
+            //                    check_loop = 1
+            //                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
+            //                    paint()
+            //                    return
+            //                }
+            //                else if (arr[v + 1][h] == 1) {
+            //                    arr[v + 1][h] = 2
+            //                    check_loop = 1
+            //                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
+            //                    find_dead_our()
+            //                    bom_enemy()
+            //                    return
+            //                }
+            //            }
+            //            if (arr[v][h] == 2 && v == 0 && direction2 == 1 && arr[v][h - 1] != 4 && check_loop == 0) {
+            //                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
+            //                if (arr[v][h - 1] == 0) {
+            //                    arr[v][h - 1] = 4
+            //                    check_loop = 1
+            //                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
+            //                    paint()
+            //                    return
+            //                }
+            //                else if (arr[v][h - 1] == 1) {
+            //                    arr[v][h - 1] = 2
+            //                    check_loop = 1
+            //                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
+            //                    find_dead_our()
+            //                    bom_enemy()
+            //                    return
+            //                }
+            //            }
+            //            if (arr[v][h] == 2 && v == 0 && direction2 == 2 && arr[v][h + 1] != 4 && check_loop == 0) {
+            //                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
+            //                if (arr[v][h + 1] == 0) {
+            //                    arr[v][h + 1] = 4
+            //                    check_loop = 1
+            //                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
+            //                    paint()
+            //                    return
+            //                }
+            //                else if (arr[v][h + 1] == 1) {
+            //                    arr[v][h + 1] = 2
+            //                    check_loop = 1
+            //                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
+            //                    find_dead_our()
+            //                    bom_enemy()
+            //                    return
+            //                }
+            //            }
+            //            //h9
+            //            if (arr[v][h] == 2 && h == 9 && direction2 == 0 && arr[v - 1][h] != 4 && check_loop == 0) {
+            //                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
+            //                if (arr[v - 1][h] == 0) {
+            //                    arr[v - 1][h] = 4
+            //                    check_loop = 1
+            //                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
+            //                    paint()
+            //                    return
+            //                }
+            //                else if (arr[v - 1][h] == 1) {
+            //                    arr[v - 1][h] = 2
+            //                    check_loop = 1
+            //                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
+            //                    find_dead_our()
+            //                    bom_enemy()
+            //                    return
+            //                }
+            //            }
+            //            if (arr[v][h] == 2 && h == 9 && direction2 == 1 && arr[v][h + 1] != 4 && check_loop == 0) {
+            //                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
+            //                if (arr[v][h + 1] == 0) {
+            //                    arr[v][h + 1] = 4
+            //                    check_loop = 1
+            //                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
+            //                    paint()
+            //                    return
+            //                }
+            //                else if (arr[v][h + 1] == 1) {
+            //                    arr[v][h + 1] = 2
+            //                    check_loop = 1
+            //                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
+            //                    find_dead_our()
+            //                    bom_enemy()
+            //                    return
+            //                }
+            //            }
+            //            if (arr[v][h] == 2 && h == 9 && direction2 == 2 && arr[v][h - 1] != 4 && check_loop == 0) {
+            //                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
+            //                if (arr[v][h - 1] == 0) {
+            //                    arr[v][h - 1] = 4
+            //                    check_loop = 1
+            //                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
+            //                    paint()
+            //                    return
+            //                }
+            //                else if (arr[v][h - 1] == 1) {
+            //                    arr[v][h - 1] = 2
+            //                    check_loop = 1
+            //                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
+            //                    find_dead_our()
+            //                    bom_enemy()
+            //                    return
+            //                }
+            //            }
+            //            //v9
+            //            if (arr[v][h] == 2 && v == 9 && direction2 == 0 && arr[v - 1][h] != 4 && check_loop == 0) {
+            //                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
+            //                if (arr[v - 1][h] == 0) {
+            //                    arr[v - 1][h] = 4
+            //                    check_loop = 1
+            //                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
+            //                    paint()
+            //                    return
+            //                }
+            //                else if (arr[v - 1][h] == 1) {
+            //                    arr[v - 1][h] = 2
+            //                    check_loop = 1
+            //                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
+            //                    find_dead_our()
+            //                    bom_enemy()
+            //                    return
+            //                }
+            //            }
+            //            if (arr[v][h] == 2 && v == 9 && direction2 == 1 && arr[v][h - 1] != 4 && check_loop == 0) {
+            //                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
+            //                if (arr[v][h - 1] == 0) {
+            //                    arr[v][h - 1] = 4
+            //                    check_loop = 1
+            //                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
+            //                    paint()
+            //                    return
+            //                }
+            //                else if (arr[v][h - 1] == 1) {
+            //                    arr[v][h - 1] = 2
+            //                    check_loop = 1
+            //                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
+            //                    find_dead_our()
+            //                    bom_enemy()
+            //                    return
+            //                }
+            //            }
+            //            if (arr[v][h] == 2 && v == 9 && direction2 == 2 && arr[v][h + 1] != 4 && check_loop == 0) {
+            //                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
+            //                if (arr[v][h + 1] == 0) {
+            //                    arr[v][h + 1] = 4
+            //                    check_loop = 1
+            //                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
+            //                    paint()
+            //                    return
+            //                }
+            //                else if (arr[v][h + 1] == 1) {
+            //                    arr[v][h + 1] = 2
+            //                    check_loop = 1
+            //                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
+            //                    find_dead_our()
+            //                    bom_enemy()
+            //                    return
+            //                }
+            //            }
+            //            //h0
+            //            if (arr[v][h] == 2 && h == 0 && direction2 == 0 && arr[v][h + 1] != 4 && check_loop == 0) {
+            //                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
+            //                if (arr[v][h + 1] == 0) {
+            //                    arr[v][h + 1] = 4
+            //                    check_loop = 1
+            //                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
+            //                    paint()
+            //                    return
+            //                }
+            //                else if (arr[v][h + 1] == 1) {
+            //                    arr[v][h + 1] = 2
+            //                    check_loop = 1
+            //                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
+            //                    find_dead_our()
+            //                    bom_enemy()
+            //                    return
+            //                }
+            //            }
+            //            if (arr[v][h] == 2 && h == 0 && direction2 == 1 && arr[v + 1][h] != 4 && check_loop == 0) {
+            //                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
+            //                if (arr[v + 1][h] == 0) {
+            //                    arr[v + 1][h] = 4
+            //                    check_loop = 1
+            //                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
+            //                    paint()
+            //                    return
+            //                }
+            //                else if (arr[v + 1][h] == 1) {
+            //                    arr[v + 1][h] = 2
+            //                    check_loop = 1
+            //                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
+            //                    find_dead_our()
+            //                    bom_enemy()
+            //                    return
+            //                }
+            //            }
+            //            if (arr[v][h] == 2 && v == 0 && direction2 == 2 && arr[v - 1][h] != 4 && check_loop == 0) {
+            //                console.log("Bom v-1", v, h, randx_enemy, randy_enemy)
+            //                if (arr[v - 1][h] == 0) {
+            //                    arr[v - 1][h] = 4
+            //                    check_loop = 1
+            //                    console.log("Bom S", v, h, randx_enemy, randy_enemy)
+            //                    paint()
+            //                    return
+            //                }
+            //                else if (arr[v - 1][h] == 1) {
+            //                    arr[v - 1][h] = 2
+            //                    check_loop = 1
+            //                    console.log("Bom A", v, h, randx_enemy, randy_enemy)
+            //                    find_dead_our()
+            //                    bom_enemy()
+            //                    return
+            //                }
+            //            }
         }
+
+
+
+
         //    }
         //    let direction3 = Math.floor(Math.random() * 2)
         //    //v0,h0
@@ -1147,6 +1215,11 @@ function bom_enemy() {
         //           return
     }
 
+    while (arr[randx_enemy][randy_enemy] == 4 || arr[randx_enemy][randy_enemy] == 3 || arr[randx_enemy][randy_enemy] == 2) {
+        randx_enemy = Math.floor(Math.random() * 10)
+        randy_enemy = Math.floor(Math.random() * 10)
+        console.log("Random: ", randy_enemy, randx_enemy)
+    }
 
     if (arr[randx_enemy][randy_enemy] == 1 && check_loop == 0) {
         arr[randx_enemy][randy_enemy] = 2
@@ -1370,10 +1443,10 @@ canvas.onmousemove = mouse_move
 canvas.onmouseup = mouse_up
 canvas.height = 350
 canvas.width = 750
-ctx.font = "35px Trebuchet MS"; 
-ctx.fillStyle = "red"; 
-ctx.color = "red"; 
-ctx.fillText("Game Battleship",270,60); 
+ctx.font = "35px Trebuchet MS";
+ctx.fillStyle = "red";
+ctx.color = "red";
+ctx.fillText("Game Battleship", 270, 60);
 let range = 0
 let range2 = 0
 for (let i = 0; i < 10; i++) {
