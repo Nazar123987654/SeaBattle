@@ -562,8 +562,41 @@ function find_dead_our() {
     }
 
 
+    paint_four()
 
+}
 
+function paint_four() {
+    for (let v = 1; v < 9; v++) {
+        for (let h = 1; h < 9; h++) {
+            if ( arr[v][h] == 3 ) {
+                if ( arr[v-1][h] != 3 ) {
+                    arr[v-1][h] = 4
+                }
+                if ( arr[v-1][h+1] != 3 ) {
+                    arr[v-1][h+1] = 4
+                }
+                if ( arr[v][h+1] != 3 ) {
+                    arr[v][h+1] = 4
+                }
+                if ( arr[v+1][h+1] != 3 ) {
+                    arr[v+1][h+1] = 4
+                }
+                if ( arr[v+1][h] != 3 ) {
+                    arr[v+1][h] = 4
+                }
+                if ( arr[v+1][h-1] != 3 ) {
+                    arr[v+1][h-1] = 4
+                }
+                if ( arr[v][h-1] != 3 ) {
+                    arr[v][h-1] = 4
+                }
+                if ( arr[v-1][h-1] != 3 ) {
+                    arr[v-1][h-1] = 4
+                }
+            }
+        }
+    }
 }
 
 function check_direc(v, h, direction) {
@@ -620,7 +653,7 @@ function check_direc_two(v, h, direction) {
             direction = 0
         }
     }
-    if (v != 0 && h != 0 && v != 9 && h != 9 ) {
+    if (v != 0 && h != 0 && v != 9 && h != 9) {
         if (arr[v][h - 1] == 0 || arr[v][h - 1] == 1) {
             direction = 3
         }
@@ -1214,6 +1247,7 @@ function bom_enemy() {
         //           bom_enemy()
         //           return
     }
+    lose()
 
     while (arr[randx_enemy][randy_enemy] == 4 || arr[randx_enemy][randy_enemy] == 3 || arr[randx_enemy][randy_enemy] == 2) {
         randx_enemy = Math.floor(Math.random() * 10)
@@ -1306,7 +1340,8 @@ function lose() {
     }
     if (peremoga == 1) {
         //console.log("TTTTT")
-        alert("lose")
+        alert("You lost this battle!")
+        throw new Error("You lost!");
         return 2
     }
 }
@@ -1447,6 +1482,17 @@ ctx.font = "35px Trebuchet MS";
 ctx.fillStyle = "red";
 ctx.color = "red";
 ctx.fillText("Game Battleship", 270, 60);
+
+ctx.font = "20px Trebuchet MS";
+ctx.fillStyle = "blue";
+ctx.color = "blue";
+ctx.fillText("You", 180, 90);
+
+ctx.font = "20px Trebuchet MS";
+ctx.fillStyle = "blue";
+ctx.color = "blue";
+ctx.fillText("Enemy", 570, 90);
+
 let range = 0
 let range2 = 0
 for (let i = 0; i < 10; i++) {
@@ -1470,8 +1516,8 @@ for (let i = 0; i < 10; i++) {
 
     }
 }
-ctx.fillStyle = "blue"
-ctx.fillRect(200, 200, 20, 20)
+//ctx.fillStyle = "blue"
+//ctx.fillRect(200, 200, 20, 20)
     /*ctx.fillStyle="white"
 ctx.fillRect(200,200,20,20)
 ctx.strokeRect(200,200,20,20)*/
