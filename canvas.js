@@ -1370,6 +1370,10 @@ canvas.onmousemove = mouse_move
 canvas.onmouseup = mouse_up
 canvas.height = 350
 canvas.width = 750
+ctx.font = "35px Trebuchet MS"; 
+ctx.fillStyle = "red"; 
+ctx.color = "red"; 
+ctx.fillText("Game Battleship",270,60); 
 let range = 0
 let range2 = 0
 for (let i = 0; i < 10; i++) {

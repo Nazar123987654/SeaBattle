@@ -1,4 +1,5 @@
 document.querySelector("#btn").onclick = function () {
+    btn.style.display = 'none';
     console.log(arr)
     startx = 100
     starty = 100
